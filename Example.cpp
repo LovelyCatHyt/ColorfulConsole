@@ -1,16 +1,17 @@
 ﻿#include <iostream>
 #include "TextAttribute.h"
 using namespace ColorfulConsole::TextAttribute;
+using WTA = WarpedTextAttr;
 
 int main()
 {
-	WarpedTextAttr::LIGHTBLUE.Apply();
+	WTA::LIGHTBLUE.Apply();
 	std::cout << "Is it blue?" << std::endl;
-	WarpedTextAttr::LIGHTGreen.Apply();
+	WTA::LIGHTGreen.Apply();
 	std::cout << "Is it green?" << std::endl;
-	WarpedTextAttr::LIGHTRed.Apply();
+	WTA::LIGHTRed.Apply();
 	std::cout << "Is it red?" << std::endl;
-	WarpedTextAttr::WHITE.Apply();
+	WTA::WHITE.Apply();
 	std::cout << "Is it white?" << std::endl;
 	return 0;
 }

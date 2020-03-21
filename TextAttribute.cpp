@@ -39,14 +39,14 @@ namespace ColorfulConsole
 			this->back_Intense = back_Intense;
 		}
 		WarpedTextAttr::WarpedTextAttr(WORD rawAttr) : WarpedTextAttr::WarpedTextAttr(
-			rawAttr & 0x1,
-			rawAttr & 0x2,
-			rawAttr & 0x4,
-			rawAttr & 0x8,
-			rawAttr & 0x10,
-			rawAttr & 0x20,
-			rawAttr & 0x40,
-			rawAttr & 0x80)
+			rawAttr & 0x1, rawAttr & 0x2, rawAttr & 0x4, rawAttr & 0x8,
+			rawAttr & 0x10, rawAttr & 0x20, rawAttr & 0x40, rawAttr & 0x80)
+		{
+		}
+		WarpedTextAttr::WarpedTextAttr(Color fore, Color back = Color(false, false, false, false)) : WarpedTextAttr::WarpedTextAttr(
+			fore.blue,fore.green,fore.red,fore.intense,
+			back.blue,back.green,back.red,back.intense
+		)
 		{
 		}
 		void WarpedTextAttr::Apply() const
