@@ -15,10 +15,7 @@ namespace ColorfulConsole
 			bool green;
 			bool red;
 			bool intense;
-			Color(bool blue, bool green, bool red, bool intense)
-			{
-
-			}
+			Color(bool blue, bool green, bool red, bool intense);
 		};
 		//文本属性代理, 可以通过直接设置bool的值来修改属性
 		class WarpedTextAttr
