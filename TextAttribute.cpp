@@ -9,8 +9,8 @@ namespace ColorfulConsole
 		{
 		}
 		const WarpedTextAttr WarpedTextAttr::LIGHTBLUE(0x9);
-		const WarpedTextAttr WarpedTextAttr::LIGHTGreen(0xa);
-		const WarpedTextAttr WarpedTextAttr::LIGHTRed(0xc);
+		const WarpedTextAttr WarpedTextAttr::LIGHTGREEN(0xa);
+		const WarpedTextAttr WarpedTextAttr::LIGHTRED(0xc);
 		const WarpedTextAttr WarpedTextAttr::WHITE(0xf);
 		WarpedTextAttr::operator WORD() const
 		{

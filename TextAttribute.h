@@ -42,8 +42,8 @@ namespace ColorfulConsole
 			explicit operator WORD() const;
 			void Apply() const;
 			static const WarpedTextAttr LIGHTBLUE;
-			static const WarpedTextAttr LIGHTGreen;
-			static const WarpedTextAttr LIGHTRed;
+			static const WarpedTextAttr LIGHTGREEN;
+			static const WarpedTextAttr LIGHTRED;
 			static const WarpedTextAttr WHITE;
 		};
 		std::ostream& operator<<(std::ostream& out, const WarpedTextAttr wat);
