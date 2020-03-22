@@ -46,7 +46,7 @@ namespace ColorfulConsole
 			rawAttr & 0x10, rawAttr & 0x20, rawAttr & 0x40, rawAttr & 0x80)
 		{
 		}
-		WarpedTextAttr::WarpedTextAttr(Color fore, Color back = Color(false, false, false, false)) : WarpedTextAttr::WarpedTextAttr(
+		WarpedTextAttr::WarpedTextAttr(Color fore, Color back) : WarpedTextAttr::WarpedTextAttr(
 			fore.blue,fore.green,fore.red,fore.intense,
 			back.blue,back.green,back.red,back.intense
 		)
@@ -54,7 +54,13 @@ namespace ColorfulConsole
 		}
 		void WarpedTextAttr::Apply() const
 		{
-			TextAttrSetter::SetAttr(*this);
+			TextAttrSetter::SetAttr((WORD)*this);
+		}
+
+		std::ostream& operator<< (std::ostream& out, const WarpedTextAttr wta)
+		{
+			wta.Apply();
+			return out;
 		}
 
 	}

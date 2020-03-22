@@ -1,5 +1,5 @@
 #pragma once
-#include <stdio.h>
+#include <ostream>
 #include <windows.h>
 #include <xstring>
 
@@ -39,12 +39,13 @@ namespace ColorfulConsole
 				bool back_Intense = false);
 			WarpedTextAttr(WORD rawAttr);
 			WarpedTextAttr(Color fore, Color back = Color(false, false, false, false));
-			operator WORD() const;
+			explicit operator WORD() const;
 			void Apply() const;
 			static const WarpedTextAttr LIGHTBLUE;
 			static const WarpedTextAttr LIGHTGreen;
 			static const WarpedTextAttr LIGHTRed;
 			static const WarpedTextAttr WHITE;
 		};
+		std::ostream& operator<<(std::ostream& out, const WarpedTextAttr wat);
 	}
 }
