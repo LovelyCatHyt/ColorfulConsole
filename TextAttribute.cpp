@@ -1,13 +1,11 @@
 #include "TextAttrSetter.h"
 #include "TextAttribute.h"
+#include "Color.h"
 
 namespace ColorfulConsole
 {
 	namespace TextAttribute
 	{
-		Color::Color(bool b, bool g, bool r, bool i) :blue(b), green(g), red(r), intense(i)
-		{
-		}
 		const WarpedTextAttr WarpedTextAttr::LIGHTBLUE(0x9);
 		const WarpedTextAttr WarpedTextAttr::LIGHTGREEN(0xa);
 		const WarpedTextAttr WarpedTextAttr::LIGHTRED(0xc);
