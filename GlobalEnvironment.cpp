@@ -24,11 +24,6 @@ namespace ColorfulConsole
 		instance().back = bg;
 		instance().ApplyCurrent();
 	}
-	void GlobalEnvironment::ChangeForeground(Color newForeground)
-	{
-		instance().fore = newForeground;
-		instance().ApplyCurrent();
-	}
 	Color GlobalEnvironment::GetFore()
 	{
 		return instance().fore;
