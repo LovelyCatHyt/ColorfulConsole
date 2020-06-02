@@ -19,7 +19,7 @@ namespace ColorfulConsole
 				back_Blue << 4 |
 				back_Green << 5 |
 				back_Red << 6 |
-				back_Intense;
+				back_Intense << 7;
 		}
 		WarpedTextAttr::WarpedTextAttr(bool fore_Blue,
 			bool fore_Green,
