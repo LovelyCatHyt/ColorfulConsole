@@ -18,6 +18,13 @@ namespace ColorfulConsole
 	ForeColorProxy::ForeColorProxy() : Color()
 	{
 	}
+	ForeColorProxy::ForeColorProxy(bool intense, bool red, bool green, bool blue)
+	{
+		this->blue = blue;
+		this->green = green;
+		this->red = red;
+		this->intense = intense;
+	}
 	ForeColorProxy::ForeColorProxy(Color&& c)
 	{
 		blue = c.blue;

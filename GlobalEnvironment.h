@@ -19,10 +19,10 @@ namespace ColorfulConsole
 		//获取前景色
 		static Color GetFore();
 		//设置前景色
-		static void SetFore(Color newFore);
+		static void SetFore(const Color& newFore);
 		//获取背景色
 		static Color GetBack();
 		//设置背景色
-		static void SetBack(Color newBack);
+		static void SetBack(const Color& newBack);
 	};
 }

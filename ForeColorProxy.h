@@ -2,6 +2,8 @@
 #include <ostream>
 #include "Color.h"
 using std::ostream;
+using uint = unsigned int;
+
 namespace ColorfulConsole
 {
 	//前景色代理, 可以借助GlobalEnvironment设置颜色而不需要直接获取背景色
@@ -9,6 +11,7 @@ namespace ColorfulConsole
 	{
 	public:
 		ForeColorProxy();
+		ForeColorProxy(bool intense = false, bool red = false, bool green = false, bool blue = false);
 		ForeColorProxy(Color&& c);
 		static const ForeColorProxy LIGHTBLUE;
 		static const ForeColorProxy LIGHTGREEN;

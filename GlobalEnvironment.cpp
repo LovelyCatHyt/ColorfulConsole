@@ -33,7 +33,7 @@ namespace ColorfulConsole
 	{
 		return instance().fore;
 	}
-	void GlobalEnvironment::SetFore(Color fore)
+	void GlobalEnvironment::SetFore(const Color& fore)
 	{
 		instance().fore = fore;
 		instance().ApplyCurrent();
@@ -42,7 +42,7 @@ namespace ColorfulConsole
 	{
 		return instance().back;
 	}
-	void GlobalEnvironment::SetBack(Color back)
+	void GlobalEnvironment::SetBack(const Color& back)
 	{
 		instance().back = back;
 		instance().ApplyCurrent();
