@@ -32,11 +32,15 @@ namespace ColorfulConsole
 			WarpedTextAttr(Color fore, Color back = Color(false, false, false, false));
 			explicit operator WORD() const;
 			void Apply() const;
+			//设置到控制台全窗体
+			void ApplyToGlo() const;
 			static const WarpedTextAttr LIGHTBLUE;
 			static const WarpedTextAttr LIGHTGREEN;
 			static const WarpedTextAttr LIGHTRED;
 			static const WarpedTextAttr WHITE;
 		};
+		//将Arrribute转化为相应的color命令,并设置相关模块的默认背景色
+		void SetConsoleDefaultColor(WORD attr);
 		std::ostream& operator<<(std::ostream& out, const WarpedTextAttr wat);
 	}
 }

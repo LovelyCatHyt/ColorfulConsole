@@ -19,7 +19,7 @@ namespace ColorfulConsole
 				back_Blue << 4 |
 				back_Green << 5 |
 				back_Red << 6 |
-				back_Intense;
+				back_Intense << 7;
 		}
 		WarpedTextAttr::WarpedTextAttr(bool fore_Blue,
 			bool fore_Green,
@@ -53,6 +53,28 @@ namespace ColorfulConsole
 		void WarpedTextAttr::Apply() const
 		{
 			TextAttrSetter::SetAttr((WORD)*this);
+		}
+
+		void WarpedTextAttr::ApplyToGlo() const
+		{
+			SetConsoleDefaultColor((WORD)*this);
+		}
+
+		void SetConsoleDefaultColor(WORD attr)
+		{
+			//用一个数组保存数据
+			char decToHex[] = "0123456789abcdef";
+			//前景色取1~4位数据
+			char foreColor = decToHex[attr & 0xf];
+			//背景色取5~8位数据并移位到最低
+			char bgColor = decToHex[(attr & 0xf0) >> 4];
+			char colorCmd[9] = "color ";
+			//补全命令
+			colorCmd[6] = bgColor;
+			colorCmd[7] = foreColor;
+			colorCmd[8] = 0;
+			//应用命令
+			system(colorCmd);
 		}
 
 		std::ostream& operator<< (std::ostream& out, const WarpedTextAttr wta)

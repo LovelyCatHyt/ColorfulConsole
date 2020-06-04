@@ -14,6 +14,8 @@ namespace ColorfulConsole
 	{
 		WTA current(fore, back);
 		current.Apply();
+		//设定全局颜色
+		current.ApplyToGlo();
 	}
 	GlobalEnvironment::GlobalEnvironment(Color fr, Color bg) : fore(fr),back(bg)
 	{
@@ -22,11 +24,6 @@ namespace ColorfulConsole
 	{
 		instance().fore = fg;
 		instance().back = bg;
-		instance().ApplyCurrent();
-	}
-	void GlobalEnvironment::ChangeForeground(Color newForeground)
-	{
-		instance().fore = newForeground;
 		instance().ApplyCurrent();
 	}
 	Color GlobalEnvironment::GetFore()
