@@ -23,6 +23,7 @@ namespace ColorfulConsole
 	public:
 		CloEscString(string content = "");
 		static void PrintUnEscStr(string origin);
+		const ForeColorProxy& operator()(const char& colorCode);
 		ostream& operator<<(const string& origin) const;
 		ostream& operator<<(const char *origin) const;
 		friend CloEscString& operator<<(ostream& o, CloEscString& cesStr);

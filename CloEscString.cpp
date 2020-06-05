@@ -34,6 +34,13 @@ namespace ColorfulConsole
 			i++;
 		}
 	}
+	const ForeColorProxy& CloEscString::operator()(const char& colorCode)
+	{
+		char code = toupper(colorCode);
+		if (code <= 'F' && code >= 'A') return ForeColorProxy(Color(code - 'A' + 10));
+		else if (code <= '9' && code >= '0') return ForeColorProxy(Color(code - '0'));
+		else return GlobalEnvironment::GetFore();	
+	}
 	ostream& CloEscString::operator<<(const string& origin) const
 	{
 		PrintUnEscStr(origin);
