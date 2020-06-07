@@ -22,5 +22,7 @@ namespace ColorfulConsole
 		static Color GetBack();
 		//���ñ���ɫ
 		static void SetBack(const Color& newBack);
+		//获取当前属性
+		static TextAttribute::WarpedTextAttr GetAttr();
 	};
 }

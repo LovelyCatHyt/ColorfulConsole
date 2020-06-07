@@ -14,7 +14,7 @@ namespace ColorfulConsole
 	{
 		WTA current(fore, back);
 		current.Apply();
-		//设定全局颜色
+		//璁惧畾鍏ㄥ眬棰滆壊
 		current.ApplyToGlo();
 	}
 	GlobalEnvironment::GlobalEnvironment(Color fr, Color bg) : fore(fr),back(bg)
@@ -43,5 +43,9 @@ namespace ColorfulConsole
 	{
 		instance().back = back;
 		instance().ApplyCurrent();
+	}
+	TextAttribute::WarpedTextAttr GlobalEnvironment::GetAttr()
+	{
+		return TextAttribute::WarpedTextAttr(instance().fore, instance().back);
 	}
 }
