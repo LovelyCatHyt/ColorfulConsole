@@ -8,21 +8,21 @@ namespace ColorfulConsole
 	{
 		static GlobalEnvironment& instance();
 		Color fore,back;
-		//Ó¦ï¿½Ãµï¿½Ç°ï¿½ï¿½É«
+		//Ó¦ÓÃµ±Ç°ÑÕÉ«ÉèÖÃ
 		void ApplyCurrent();
 		GlobalEnvironment(Color fr = Color(true, true, true, false), Color bg = Color(false, false, false, false));
 	public:
-		//ï¿½ï¿½Ê¼ï¿½ï¿½
+		//³õÊ¼»¯
 		static void Init(Color fg = Color(true,true,true,false), Color bg = Color(false, false, false, false));
-		//ï¿½ï¿½È¡Ç°ï¿½ï¿½É«
+		//»ñÈ¡Ç°¾°É«
 		static Color GetFore();
-		//ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½É«
+		//ÉèÖÃÇ°¾°É«
 		static void SetFore(const Color& newFore);
-		//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½É«
+		//»ñÈ¡±³¾°É«
 		static Color GetBack();
-		//ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½É«
+		//ÉèÖÃ±³¾°É«
 		static void SetBack(const Color& newBack);
-		//è·å–å½“å‰å±æ€§
+		//»ñÈ¡µ±Ç°ÊôĞÔ
 		static TextAttribute::WarpedTextAttr GetAttr();
 	};
 }
