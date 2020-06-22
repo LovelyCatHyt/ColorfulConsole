@@ -11,7 +11,7 @@ namespace ColorfulConsole
 	{
 	public:
 		ForeColorProxy();
-		ForeColorProxy(bool intense = false, bool red = false, bool green = false, bool blue = false);
+		ForeColorProxy(bool intense, bool red, bool green, bool blue);
 		ForeColorProxy(Color&& c);
 		static const ForeColorProxy LIGHTBLUE;
 		static const ForeColorProxy LIGHTGREEN;
